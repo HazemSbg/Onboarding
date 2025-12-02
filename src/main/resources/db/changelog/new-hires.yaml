@@ -30,3 +30,52 @@ databaseChangeLog:
                   constraints:
                     nullable: false
 
+              - column:
+                  name: code
+                  type: VARCHAR(6)
+                  constraints:
+                    unique: true
+                    nullable: false
+
+              - column:
+                  name: email
+                  type: VARCHAR(150)
+                  constraints:
+                    unique: true
+                    nullable: false
+
+              - column:
+                  name: position
+                  type: VARCHAR(100)
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: department
+                  type: VARCHAR(100)
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: manager
+                  type: VARCHAR(100)
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: date_of_join
+                  type: DATE
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: degree
+                  type: VARCHAR(100)
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: photo_path
+                  type: VARCHAR(100)
+                  constraints:
+                    nullable: false

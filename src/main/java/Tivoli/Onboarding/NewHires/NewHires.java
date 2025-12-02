@@ -44,12 +44,13 @@ public class NewHires {
     @Column(nullable = false)
     private String manager;
 
-    @Column(name = "date_of_joining", nullable = false)
+    @Column(name = "date_of_join", nullable = false)
     private LocalDate dateOfJoining;
 
     @Column(nullable = false)
     private String degree;
 
+    @Column(name = "photo_path", nullable = false)
     private String photo;
 
 
