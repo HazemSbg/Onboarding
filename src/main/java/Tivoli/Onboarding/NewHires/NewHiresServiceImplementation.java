@@ -49,7 +49,8 @@ public class NewHiresServiceImplementation implements NewHiresService {
         existingHire.setDegree(newHires.getDegree());
         existingHire.setPosition(newHires.getPosition());
 
-        return newHireRepo.save(existingHire);
+        newHireRepo.save(existingHire);
+        return existingHire;
 
     }
 
