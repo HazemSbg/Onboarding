@@ -13,7 +13,7 @@ public class NewHiresPhotoStorageImplementation implements NewHiresPhotoStorage 
     private final String photoDirectory = "C://Users//IT User//OneDrive - TIVOLI GROUP//Desktop//Hazem//NewHiresPhotoDirectory";
 
     @Override
-    public String savePhoto(String newHireCode, MultipartFile photo) {
+    public String savePhoto(Integer newHireCode, MultipartFile photo) {
 
         if (photo == null || photo.isEmpty()) {
             throw new InvalidFileException("Photo is invalid");
