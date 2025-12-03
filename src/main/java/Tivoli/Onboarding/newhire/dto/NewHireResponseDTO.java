@@ -1,29 +1,21 @@
-package Tivoli.Onboarding.newHires;
+package Tivoli.Onboarding.newhire.dto;
 
 import lombok.*;
-
 import java.time.LocalDate;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
+@Getter @Setter
+@NoArgsConstructor @AllArgsConstructor
 @Builder
-public class NewHiresResponseDto {
+public class NewHireResponseDTO {
 
     private Long id;
     private Integer code;
-    private String firstName;
-    private String lastName;
-    private String middleName;
+    private String fullName;
     private String email;
     private String position;
     private String department;
     private String manager;
     private LocalDate dateOfJoining;
-    private String photoPath;
     private String degree;
     private String photoUrl;
-
-
 }

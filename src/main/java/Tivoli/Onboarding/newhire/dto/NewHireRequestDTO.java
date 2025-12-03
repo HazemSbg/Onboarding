@@ -1,20 +1,15 @@
-package Tivoli.Onboarding.newHires;
+package Tivoli.Onboarding.newhire.dto;
 
 import jakarta.validation.constraints.*;
 import lombok.*;
-
 import java.time.LocalDate;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
+@Getter @Setter
+@NoArgsConstructor @AllArgsConstructor
 @Builder
-public class NewHiresRequestDto {
+public class NewHireRequestDTO {
 
-    @NotBlank
-    @Min(6)
-    @Max(6)
+    @NotNull(message = "Code is required")
     private Integer code;
 
     @NotBlank
@@ -35,14 +30,11 @@ public class NewHiresRequestDto {
     @NotBlank
     private String department;
 
-    @NotBlank
+    private String manager;
+
+    @NotNull
     @PastOrPresent
     private LocalDate dateOfJoining;
 
-    @NotBlank
     private String degree;
-
-    @NotBlank private String manager;
-
-
 }

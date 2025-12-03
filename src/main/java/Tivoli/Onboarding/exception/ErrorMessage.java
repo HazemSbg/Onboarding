@@ -1,4 +1,4 @@
-package Tivoli.Onboarding.Exception;
+package Tivoli.Onboarding.exception;
 
 import java.time.LocalDateTime;
 

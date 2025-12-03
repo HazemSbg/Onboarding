@@ -1,4 +1,4 @@
-package Tivoli.Onboarding.Exception;
+package Tivoli.Onboarding.exception;
 
 public class InvalidFileException extends RuntimeException {
     public InvalidFileException(String message) {
