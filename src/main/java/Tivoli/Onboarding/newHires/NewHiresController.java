@@ -37,7 +37,7 @@ public class NewHiresController {
         return ResponseEntity.ok(NewHiresMapper.toResponse(saved));
     }
 
-    // Get
+    // Get all
     @GetMapping
     public ResponseEntity<List<NewHiresResponseDto>> getAll() {
         List<NewHires> hires = newHiresService.getAllNewHires();
