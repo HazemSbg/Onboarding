@@ -1,4 +1,4 @@
-package Tivoli.Onboarding.NewHires;
+package Tivoli.Onboarding.newHires;
 
 public class NewHiresMapper {
 
@@ -21,21 +21,23 @@ public class NewHiresMapper {
     }
 
     // converts Employee Entity to a response dto
-    public static NewHiresResponseDto toResponse(NewHires newHires) {
-
+    public static NewHiresResponseDto toResponse(NewHires hire) {
         NewHiresResponseDto dto = new NewHiresResponseDto();
+        dto.setCode(hire.getCode());
+        dto.setFirstName(hire.getFirstName());
+        dto.setLastName(hire.getLastName());
+        dto.setEmail(hire.getEmail());
+        dto.setPosition(hire.getPosition());
+        dto.setDepartment(hire.getDepartment());
+        dto.setManager(hire.getManager());
+        dto.setDateOfJoining(hire.getDateOfJoining());
+        dto.setDegree(hire.getDegree());
 
-        dto.setFirstName(newHires.getFirstName());
-        dto.setMiddleName(newHires.getMiddleName());
-        dto.setLastName(newHires.getLastName());
-        dto.setEmail(newHires.getEmail());
-        dto.setPosition(newHires.getPosition());
-        dto.setDepartment(newHires.getDepartment());
-        dto.setManager(newHires.getManager());
-        dto.setDateOfJoining(newHires.getDateOfJoining());
-        dto.setPhotoPath(newHires.getPhoto());
-        dto.setDegree(newHires.getDegree());
+        if (hire.getPhotoFilename() != null) {
+            dto.setPhotoUrl("http://localhost:8080/photos/" + hire.getPhotoFilename());
+        }
 
         return dto;
     }
+
 }

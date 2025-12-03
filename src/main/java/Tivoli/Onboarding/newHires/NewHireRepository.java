@@ -1,4 +1,4 @@
-package Tivoli.Onboarding.NewHires;
+package Tivoli.Onboarding.newHires;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

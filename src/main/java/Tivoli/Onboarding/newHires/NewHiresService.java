@@ -1,4 +1,4 @@
-package Tivoli.Onboarding.NewHires;
+package Tivoli.Onboarding.newHires;
 
 import java.util.List;
 
@@ -18,4 +18,6 @@ public interface NewHiresService {
 
     // Get all
     List<NewHires> getAllNewHires();
+
+    NewHires save(NewHires saved);
 }

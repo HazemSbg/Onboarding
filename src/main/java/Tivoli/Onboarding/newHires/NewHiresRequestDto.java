@@ -1,4 +1,4 @@
-package Tivoli.Onboarding.NewHires;
+package Tivoli.Onboarding.newHires;
 
 import jakarta.validation.constraints.*;
 import lombok.*;

@@ -1,4 +1,4 @@
-package Tivoli.Onboarding.NewHires;
+package Tivoli.Onboarding.newHires;
 
 import lombok.*;
 
@@ -12,7 +12,7 @@ import java.time.LocalDate;
 public class NewHiresResponseDto {
 
     private Long id;
-    private String code;
+    private Integer code;
     private String firstName;
     private String lastName;
     private String middleName;
@@ -23,5 +23,7 @@ public class NewHiresResponseDto {
     private LocalDate dateOfJoining;
     private String photoPath;
     private String degree;
+    private String photoUrl;
+
 
 }

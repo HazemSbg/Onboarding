@@ -1,4 +1,4 @@
-package Tivoli.Onboarding.NewHires;
+package Tivoli.Onboarding.newHires;
 
 import Tivoli.Onboarding.Exception.InvalidFileException;
 import org.springframework.stereotype.Service;
@@ -6,11 +6,13 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.UUID;
 
 @Service
 public class NewHiresPhotoStorageImplementation implements NewHiresPhotoStorage {
 
-    private final String photoDirectory = "C://Users//IT User//OneDrive - TIVOLI GROUP//Desktop//Hazem//NewHiresPhotoDirectory";
+    private final String photoDirectory =
+            "C:/Users/IT User/OneDrive - TIVOLI GROUP/Desktop/Hazem/NewHiresPhotoDirectory";
 
     @Override
     public String savePhoto(Integer newHireCode, MultipartFile photo) {
@@ -19,26 +21,22 @@ public class NewHiresPhotoStorageImplementation implements NewHiresPhotoStorage 
             throw new InvalidFileException("Photo is invalid");
         }
 
-        // Create a reference to the directory
         File directory = new File(photoDirectory);
-
-        // If the directory doesnt exist create it
         if (!directory.exists()) {
-            directory.mkdir();
+            directory.mkdirs();
         }
 
-        // Unique photo name
-        String filename = newHireCode + "-" + photo.getOriginalFilename();
+        // safe filename to avoid collisions
+        String filename = newHireCode + "-" + UUID.randomUUID() + "-" + photo.getOriginalFilename();
 
-        // Final save location
-        File pic =  new File(photoDirectory + filename);
+        File pic = new File(directory, filename);
+
         try {
             photo.transferTo(pic);
         } catch (IOException e) {
-            throw new RuntimeException("Photo save failed " + e.getMessage());
+            throw new RuntimeException("Photo save failed: " + e.getMessage());
         }
 
-        return pic.getAbsolutePath();
-
+        return filename; // store only the filename
     }
 }

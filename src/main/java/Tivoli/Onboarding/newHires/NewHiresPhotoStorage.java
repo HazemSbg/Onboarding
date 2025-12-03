@@ -1,7 +1,7 @@
-package Tivoli.Onboarding.NewHires;
+package Tivoli.Onboarding.newHires;
 
 import org.springframework.web.multipart.MultipartFile;
 
 public interface NewHiresPhotoStorage {
-    String savePhoto(String newHireCode, MultipartFile photo);
+    String savePhoto(Integer newHireCode, MultipartFile photo);
 }

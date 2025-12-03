@@ -1,15 +1,17 @@
-package Tivoli.Onboarding.NewHires;
+package Tivoli.Onboarding.newHires;
 
 import jakarta.persistence.*;
-import lombok.*;
+import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
 @Entity
-@Table (name = "New_Hires")
+@Table(name = "New_Hires")
 @Data
-@Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -49,15 +51,6 @@ public class NewHires {
     @Column(nullable = false)
     private String degree;
 
-    @Column(name = "photo_path", nullable = false)
-    private String photo;
-
-
-
-
-
-
-
-
-
+    @Column(name = "photo_path", nullable = true)
+    private String photoFilename;
 }
